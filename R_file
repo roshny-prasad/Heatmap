@@ -1,0 +1,8 @@
+library(readxl)
+library(ggplot2)
+library(hrbrthemes)
+ref <- read_excel("C:/Users/user/Downloads/freshwater_lefse.xlsx", sheet = "Sheet1")
+ggplot(ref, aes(y = Accession, x =  ARGs, fill = Value)) +
+  geom_tile()+
+  scale_fill_gradient(low="yellow", high="red")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x = element_text(angle=90))
